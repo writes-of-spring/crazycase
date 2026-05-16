@@ -1,15 +1,14 @@
 import * as React from "react";
-import { randomCase } from "@/lib/randomCase";
-import { convertCase } from "@/lib/crazyCase";
+import { scrambleCase, invertCase } from "@/lib/case";
 
 const CrazyCase = () => {
   const [text, setText] = React.useState("Crazy String");
   const [isCrazyCase, setIsCrazyCase] = React.useState(false);
 
-  const displayedText = isCrazyCase ? convertCase(text) : text;
+  const displayedText = isCrazyCase ? invertCase(text) : text;
 
   function handleRandomise() {
-    setText(randomCase(text));
+    setText(scrambleCase(text));
   }
 
   return (
