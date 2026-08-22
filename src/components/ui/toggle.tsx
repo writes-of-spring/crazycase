@@ -1,6 +1,6 @@
-import { forwardRef } from 'react';
+import { forwardRef } from "react";
 
-export type ToggleProps = React.InputHTMLAttributes<HTMLInputElement>
+export type ToggleProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Toggle = forwardRef<HTMLInputElement, ToggleProps>((props, ref) => {
   return (
@@ -16,4 +16,4 @@ export const Toggle = forwardRef<HTMLInputElement, ToggleProps>((props, ref) => 
   );
 });
 
-Toggle.displayName = 'Toggle';
+Toggle.displayName = "Toggle";

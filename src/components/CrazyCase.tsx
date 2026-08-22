@@ -43,10 +43,7 @@ const CrazyCase = () => {
           </div>
 
           <div className="flex items-center justify-between border-t border-border pt-5">
-            <label
-              htmlFor="crazy-toggle"
-              className="text-sm font-medium text-card-foreground"
-            >
+            <label htmlFor="crazy-toggle" className="text-sm font-medium text-card-foreground">
               Crazy Case Mode
             </label>
             <div className="group relative inline-flex w-11 shrink-0 cursor-pointer rounded-full bg-muted p-0.5 outline-primary outline-offset-2 transition-colors duration-200 ease-in-out has-checked:bg-primary has-focus-visible:outline-2">
