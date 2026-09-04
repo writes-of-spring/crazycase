@@ -19,7 +19,7 @@ const CrazyCase = () => {
           <span className="font-mono text-xs font-medium uppercase tracking-wide text-primary">
             Text Transformer
           </span>
-          <h1 className="font-mono text-4xl font-semibold tracking-tight text-balance text-foreground">
+          <h1 className="font-mono text-4xl font-semibold tracking-tight text-balance text-foreground [overflow-wrap:anywhere]">
             {displayedText || "Enter text"}
           </h1>
           <p className="max-w-[42ch] text-base text-muted-foreground leading-relaxed">

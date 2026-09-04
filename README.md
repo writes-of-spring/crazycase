@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Crazy Case
 
-## Getting Started
+A small text transformer built with React, TypeScript, Vite, and Tailwind CSS.
+Enter text, toggle Crazy Case Mode to invert its casing, or select Randomise to
+randomise the casing of the input. Transformations affect ASCII letters (A–Z and
+a–z); other characters are preserved.
 
-First, run the development server:
+## Getting started
+
+Install Node.js compatible with the project's Vite version and pnpm, then run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local URL printed by Vite (normally <http://localhost:5173>).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development checks
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+pnpm lint
+pnpm format:check
+pnpm build
+```
 
-## Learn More
+Use `pnpm format` to apply formatting. The build runs TypeScript checks before
+generating the production site. There is currently no automated test suite.
 
-To learn more about Next.js, take a look at the following resources:
+## Production build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm build
+pnpm preview
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The production files are written to `dist/`. Deploy that directory to a static
+hosting service. `pnpm preview` serves the build locally for inspection; it is
+not a production server. If hosting under a subpath, configure Vite's `base`
+option in `vite.config.ts` before building.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `src/components/CrazyCase.tsx`: input, mode toggle, and transformed output.
+- `src/lib/case.ts`: inversion and randomisation functions.
+- `src/index.css`: Tailwind setup and theme colours.
+- `src/App.tsx`: page layout.
+- `vite.config.ts`: build plugins and import alias.
